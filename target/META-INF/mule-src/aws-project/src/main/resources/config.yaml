@@ -1,0 +1,8 @@
+aws:
+  sqs:
+    accessKey: "${aws_sqs_accessKey}"
+    secretKey: "${aws_sqs_secretKey}"
+    region: "${aws_sqs_region}"
+    queues:
+      book_purchase: "arn:aws:sqs:eu-north-1:843981437160:nafza"
+      book_restock: "arn:aws:sqs:eu-north-1:843981437160:nafza_purchase"
