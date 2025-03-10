@@ -33,7 +33,7 @@
 				<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 					<Deployment>
-						<target>CLOUDHUB_2_0</target>
+						<target>Cloudhub2</target>
 						<muleVersion>4.4.0</muleVersion>
 						<username>nafza_002</username>
 						<password>Nafza@2002</password>
