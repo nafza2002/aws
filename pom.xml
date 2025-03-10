@@ -35,17 +35,27 @@
                 <version>${mule.maven.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <cloudHub2Deployment>  <!-- ✅ CloudHub 2.0 deployment -->
-                        <uri>https://anypoint.mulesoft.com</uri>
-                        <username>nafza_0002</username>
-                        <password>Nafza@2002</password>
-                        <organization>motiveminds-52</organization>
-                        <environment>Sandbox</environment>
-                        <applicationName>aws</applicationName>
-                        <target>cloudhub2</target>  <!-- ✅ Define your CH2.0 target -->
-                        <replicas>1</replicas>  <!-- ✅ CloudHub 2.0 uses replicas instead of workers -->
-                        <objectStoreV2>true</objectStoreV2>
-                    </cloudHub2Deployment>
+                    <plugin>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <version>4.4.0</version> <!-- Ensure you're using the correct version -->
+    <extensions>true</extensions>
+    <configuration>
+        <cloudHub2Deployment>
+            <uri>https://anypoint.mulesoft.com</uri>
+            <provider>MC</provider>
+            <environment>Sandbox</environment>  
+            <target>CLOUDHUB_2_0</target>  
+            <muleVersion>4.4.0</muleVersion>
+            <username>nafza_0002</username>
+            <password>Nafza@2002</password>
+            <applicationName>aws-project</applicationName> <!-- Update with your application name -->
+            <replicas>1</replicas>
+            <vCores>1</vCores>
+        </cloudHub2Deployment>
+    </configuration>
+</plugin>
+
                 </configuration>
             </plugin>
         </plugins>
