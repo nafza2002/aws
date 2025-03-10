@@ -42,17 +42,16 @@
     <extensions>true</extensions>
     <configuration>
         <cloudHub2Deployment>
-            <uri>https://anypoint.mulesoft.com</uri>
-            <provider>MC</provider>
-            <environment>Sandbox</environment>  
-            <target>CLOUDHUB_2_0</target>  
-            <muleVersion>4.4.0</muleVersion>
-            <username>nafza_0002</username>
-            <password>Nafza@2002</password>
-            <applicationName>aws-project</applicationName> <!-- Update with your application name -->
-            <replicas>1</replicas>
-            <vCores>1</vCores>
-        </cloudHub2Deployment>
+<uri>https://anypoint.mulesoft.com</uri>
+<muleVersion>4.7.0</muleVersion>
+<username>${env.ANYPOINT_USERNAME}</username>
+<password>${env.ANYPOINT_PASSWORD}</password>
+<applicationName>cicd1</applicationName>
+<environment>Sandbox</environment>
+<workers>1</workers>
+<workerType>MICRO</workerType>
+<objectStoreV2>true</objectStoreV2>
+</cloudHub2Deployment>
     </configuration>
 </plugin>
 
