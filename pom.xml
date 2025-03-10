@@ -43,7 +43,7 @@
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</Deployment>
-				</cloudhubDeployment>
+				</cloudHubDeployment>
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>com.h2database</groupId>
