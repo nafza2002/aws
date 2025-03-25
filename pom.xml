@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>46765280-7596-4ef9-81f0-4cd938cc0c2b</groupId>
 	<artifactId>aws-project</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
 	<name>aws-project</name>
@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.7.0</app.runtime>
-		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.1.1</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -25,33 +25,32 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-				<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.4.0</muleVersion>
-						<username>nafza_0002</username>
-						<password>Nafza@2002</password>
-						<applicationName>aws</applicationName>
-						<environment>Sandbox</environment>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
-						<objectStoreV2>true</objectStoreV2>
-					</cloudHubDeployment>
-					<sharedLibraries>
-						<sharedLibrary>
-							<groupId>com.h2database</groupId>
-							<artifactId>h2</artifactId>
-						</sharedLibrary>
-					</sharedLibraries>
-				</configuration>
-			</plugin>
+<groupId>org.mule.tools.maven</groupId>
+<artifactId>mule-maven-plugin</artifactId>
+<version>${mule.maven.plugin.version}</version>
+<extensions>true</extensions>
+<configuration>
+<classifier>mule-application</classifier>
+<runtimeVersion>4.9.0</runtimeVersion>
+<cloudhub2Deployment>
+<uri>https://anypoint.mulesoft.com</uri>
+<provider>MC</provider>
+<environment>Sandbox</environment>
+<target>Cloudhub-US-East-2</target>
+<server>Repository1</server>
+<applicationName>${project.artifactId}</applicationName>
+<releaseChannel>EDGE</releaseChannel>
+<replicas>1</replicas>
+<javaVersion>17</javaVersion>
+<vCores>0.1</vCores>
+<deploymentSettings>
+<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+</deploymentSettings>
+</cloudhub2Deployment>
+</configuration>
+</plugin>
 		</plugins>
 	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
@@ -83,6 +82,14 @@
 			<version>2.3.232</version>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+<repository>
+<id>Repository</id>
+<name>Corporate Repository</name>
+<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+<layout>default</layout>
+</repository>
+</distributionManagement>
 
 	<repositories>
 		<repository>
@@ -97,8 +104,13 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+<id>Repository</id>
+<name>Private Exchange repository</name>
+<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+<layout>default</layout>
+</repository>
 	</repositories>
-
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
