@@ -37,7 +37,7 @@
 <provider>MC</provider>
 <environment>Sandbox</environment>
 <target>Cloudhub-US-East-2</target>
-<server>Repository1</server>
+<server>Repository</server>
 <applicationName>${project.artifactId}</applicationName>
 <releaseChannel>EDGE</releaseChannel>
 <replicas>1</replicas>
