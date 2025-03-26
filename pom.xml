@@ -4,7 +4,7 @@
  
 	<groupId>46765280-7596-4ef9-81f0-4cd938cc0c2b</groupId>
 	<artifactId>aws-project</artifactId>
-	<version>1.1.5</version>
+	<version>1.1.6</version>
 	<packaging>mule-application</packaging>
  
 	<name>aws-project</name>
